@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    136610,       2576]
-NotebookOptionsPosition[    134171,       2527]
-NotebookOutlinePosition[    134550,       2543]
-CellTagsIndexPosition[    134507,       2540]
+NotebookDataLength[    136652,       2577]
+NotebookOptionsPosition[    134213,       2528]
+NotebookOutlinePosition[    134592,       2544]
+CellTagsIndexPosition[    134549,       2541]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1852,7 +1852,7 @@ Cell[BoxData[
        ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{
         RowBox[{"generateData", "[", "k_", "]"}], ":=", 
-        RowBox[{"ParallelTable", "[", "\[IndentingNewLine]", 
+        RowBox[{"Table", "[", "\[IndentingNewLine]", 
          RowBox[{"(*", 
           RowBox[{"e", "-", 
            RowBox[{
@@ -2258,7 +2258,8 @@ Cell[BoxData[
    3.8058754196396723`*^9}, {3.805875567278894*^9, 3.805875583876501*^9}, {
    3.805881688945558*^9, 3.805881703347753*^9}, {3.805881738197514*^9, 
    3.805881743980672*^9}, {3.805896670125299*^9, 3.8058966713299217`*^9}, {
-   3.805958330075161*^9, 3.805958333000223*^9}},
+   3.805958330075161*^9, 3.805958333000223*^9}, {3.805958628887891*^9, 
+   3.805958634783607*^9}},
  FontFamily->"Source Code Pro",
  FontSize->12,
  FontWeight->
@@ -2558,25 +2559,25 @@ Cell[6320, 167, 86006, 1475, 604, "Output",ExpressionUUID->"8732f480-f81f-465a-9
 Cell[CellGroupData[{
 Cell[92387, 1649, 1035, 16, 142, "Section",ExpressionUUID->"d24a5f42-df8d-43d8-82f1-c8395823f38c"],
 Cell[CellGroupData[{
-Cell[93447, 1669, 31325, 595, 2779, "Input",ExpressionUUID->"d0c3848f-a082-4bf5-95e6-818c5f99c3d4"],
+Cell[93447, 1669, 31367, 596, 2779, "Input",ExpressionUUID->"d0c3848f-a082-4bf5-95e6-818c5f99c3d4"],
 Cell[CellGroupData[{
-Cell[124797, 2268, 266, 5, 29, "Print",ExpressionUUID->"9c6d299d-cc0b-4432-bbdf-91acfd4bdb7c"],
-Cell[125066, 2275, 252, 5, 29, "Print",ExpressionUUID->"edb7fa35-cdea-4f50-97d0-6f250b06ad15"],
-Cell[125321, 2282, 271, 5, 29, "Print",ExpressionUUID->"f6bdd7ab-2e2a-4d21-8bc0-9f37706a0b03"],
-Cell[125595, 2289, 253, 5, 29, "Print",ExpressionUUID->"eebb8315-617b-477e-aaf1-9b50cb1a4857"],
-Cell[125851, 2296, 249, 5, 29, "Print",ExpressionUUID->"f8856938-f2de-4668-844f-a3519756e6d5"],
-Cell[126103, 2303, 257, 5, 29, "Print",ExpressionUUID->"a358fff4-1e90-47d3-9fd5-57e25027b9e9"],
-Cell[126363, 2310, 284, 6, 29, "Print",ExpressionUUID->"8a5f9a7c-ee08-4fb8-a7d5-96b10e87ef5f"]
+Cell[124839, 2269, 266, 5, 29, "Print",ExpressionUUID->"9c6d299d-cc0b-4432-bbdf-91acfd4bdb7c"],
+Cell[125108, 2276, 252, 5, 29, "Print",ExpressionUUID->"edb7fa35-cdea-4f50-97d0-6f250b06ad15"],
+Cell[125363, 2283, 271, 5, 29, "Print",ExpressionUUID->"f6bdd7ab-2e2a-4d21-8bc0-9f37706a0b03"],
+Cell[125637, 2290, 253, 5, 29, "Print",ExpressionUUID->"eebb8315-617b-477e-aaf1-9b50cb1a4857"],
+Cell[125893, 2297, 249, 5, 29, "Print",ExpressionUUID->"f8856938-f2de-4668-844f-a3519756e6d5"],
+Cell[126145, 2304, 257, 5, 29, "Print",ExpressionUUID->"a358fff4-1e90-47d3-9fd5-57e25027b9e9"],
+Cell[126405, 2311, 284, 6, 29, "Print",ExpressionUUID->"8a5f9a7c-ee08-4fb8-a7d5-96b10e87ef5f"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[126708, 2323, 215, 4, 84, "Section",ExpressionUUID->"3ddbe111-c0da-4276-82fd-9869c5c6436c"],
-Cell[126926, 2329, 4946, 139, 1005, "Input",ExpressionUUID->"4d4c09a2-ea01-45b8-a28c-06901b332f83"]
+Cell[126750, 2324, 215, 4, 84, "Section",ExpressionUUID->"3ddbe111-c0da-4276-82fd-9869c5c6436c"],
+Cell[126968, 2330, 4946, 139, 1005, "Input",ExpressionUUID->"4d4c09a2-ea01-45b8-a28c-06901b332f83"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[131909, 2473, 189, 3, 84, "Section",ExpressionUUID->"80e344df-b0a6-49a5-9df9-845785b8baa1"],
-Cell[132101, 2478, 2054, 46, 345, "Input",ExpressionUUID->"e51a5407-95c0-4f70-9ac5-5e7a96e7867e"]
+Cell[131951, 2474, 189, 3, 84, "Section",ExpressionUUID->"80e344df-b0a6-49a5-9df9-845785b8baa1"],
+Cell[132143, 2479, 2054, 46, 345, "Input",ExpressionUUID->"e51a5407-95c0-4f70-9ac5-5e7a96e7867e"]
 }, Open  ]]
 }
 ]
