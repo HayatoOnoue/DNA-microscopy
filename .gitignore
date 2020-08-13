@@ -4,3 +4,4 @@
 *.png
 **/unnecessary/**
 **/data*
+**/.ipynb_checkpoints/
