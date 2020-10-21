@@ -1,5 +1,6 @@
 #!/usr/bin/sh
 
+conda install -y python=3.8
 conda install -y networkx
 conda install -y numpy
 conda install -y joblib
