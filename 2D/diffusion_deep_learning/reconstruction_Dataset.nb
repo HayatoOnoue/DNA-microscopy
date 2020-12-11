@@ -1,3 +1,22 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     43847,        892]
+NotebookOptionsPosition[     42775,        864]
+NotebookOutlinePosition[     43218,        882]
+CellTagsIndexPosition[     43175,        879]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
 Notebook[{
 Cell["\<\
 This program creates adjacency matrices from the stiffness matrix resulting \
@@ -521,84 +540,8 @@ Cell[BoxData[{
                RowBox[{"{", 
                 RowBox[{
                 "coordsExportDirectory", ",", "coordsExportFilename"}], "}"}],
-                "]"}], ",", "coBeads"}], "]"}], ";", "\[IndentingNewLine]", 
-            "\[IndentingNewLine]", 
-            RowBox[{"(*", 
-             RowBox[{"Add", " ", "noise"}], "*)"}], "\[IndentingNewLine]", 
-            RowBox[{"adjMatU", "=", 
-             RowBox[{"UpperTriangularize", "@", "adjMat"}]}], ";", 
-            "\[IndentingNewLine]", 
-            RowBox[{"nonzeroPositions", "=", 
-             RowBox[{"adjMatU", "[", "\"\<NonzeroPositions\>\"", "]"}]}], ";",
-             "\[IndentingNewLine]", 
-            RowBox[{"nEdges", "=", 
-             RowBox[{"Length", "@", "nonzeroPositions"}]}], ";", 
-            "\[IndentingNewLine]", 
-            RowBox[{"nonzeroValues", "=", 
-             RowBox[{"adjMatU", "[", "\"\<NonzeroValues\>\"", "]"}]}], ";", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Do", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"mask", "=", 
-                RowBox[{"Unitize", "@", 
-                 RowBox[{"Threshold", "[", 
-                  RowBox[{
-                   RowBox[{"RandomReal", "[", 
-                    RowBox[{"1", ",", "nEdges"}], "]"}], ",", 
-                   "dropProbability"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
-               RowBox[{"lognormals", "=", 
-                RowBox[{"RandomVariate", "[", 
-                 RowBox[{
-                  RowBox[{"LogNormalDistribution", "[", 
-                   RowBox[{"mu", ",", "sigma"}], "]"}], ",", "nEdges"}], 
-                 "]"}]}], ";", "\[IndentingNewLine]", 
-               RowBox[{"ReplacePart", "[", 
-                RowBox[{"Thread", "[", 
-                 RowBox[{"nonzeroPositions", "\[Rule]", 
-                  RowBox[{"nonzeroValues", "*", "mask", "*", "lognormals"}]}],
-                  "]"}], "]"}], ";", "\[IndentingNewLine]", 
-               RowBox[{"adjMat", "=", 
-                RowBox[{"adjMatU", "+", 
-                 RowBox[{"Transpose", "@", "adjMatU"}]}]}], ";", 
-               "\[IndentingNewLine]", "\[IndentingNewLine]", 
-               RowBox[{"adjExportDirectory", "=", 
-                RowBox[{"FileNameJoin", "[", 
-                 RowBox[{"{", 
-                  RowBox[{
-                   RowBox[{"exportRoot", "<>", "\"\<_\>\"", "<>", 
-                    RowBox[{"ToString", "@", "sigma"}]}], ",", 
-                   RowBox[{"info", "[", "\"\<use\>\"", "]"}], ",", 
-                   "\"\<raw\>\"", ",", " ", "\"\<adjs\>\""}], "}"}], "]"}]}], 
-               ";", "\[IndentingNewLine]", 
-               RowBox[{"coordsExportDirectory", "=", 
-                RowBox[{"FileNameJoin", "[", 
-                 RowBox[{"{", 
-                  RowBox[{
-                   RowBox[{"exportRoot", "<>", "\"\<_\>\"", "<>", 
-                    RowBox[{"ToString", "@", "sigma"}]}], ",", 
-                   RowBox[{"info", "[", "\"\<use\>\"", "]"}], ",", 
-                   "\"\<raw\>\"", ",", " ", "\"\<coords\>\""}], "}"}], 
-                 "]"}]}], ";", "\[IndentingNewLine]", 
-               RowBox[{"Export", "[", 
-                RowBox[{
-                 RowBox[{"FileNameJoin", "[", 
-                  RowBox[{"{", 
-                   RowBox[{"adjExportDirectory", ",", "adjExportFilename"}], 
-                   "}"}], "]"}], ",", 
-                 RowBox[{"SparseArray", "@", "adjMat"}]}], "]"}], ";", 
-               "\[IndentingNewLine]", 
-               RowBox[{"Export", "[", 
-                RowBox[{
-                 RowBox[{"FileNameJoin", "[", 
-                  RowBox[{"{", 
-                   RowBox[{
-                   "coordsExportDirectory", ",", "coordsExportFilename"}], 
-                   "}"}], "]"}], ",", "coBeads"}], "]"}], ";"}], 
-              "\[IndentingNewLine]", ",", 
-              RowBox[{"{", 
-               RowBox[{"sigma", ",", "sigmas"}], "}"}]}], "]"}], ";"}], 
-           "\[IndentingNewLine]", "\[IndentingNewLine]", ",", 
+                "]"}], ",", "coBeads"}], "]"}], ";"}], "\[IndentingNewLine]", 
+           ",", 
            RowBox[{"{", 
             RowBox[{"sampleIndex", ",", 
              RowBox[{"Range", "@", 
@@ -870,10 +813,11 @@ Cell[BoxData[{
    3.809822847075181*^9, 3.809822920026043*^9}, {3.8098229599406147`*^9, 
    3.8098230316951323`*^9}, {3.809823191362863*^9, 3.809823192523108*^9}, {
    3.8098232241297092`*^9, 3.809823233860927*^9}, {3.80982330734168*^9, 
-   3.809823313270455*^9}},
+   3.809823313270455*^9}, {3.816667252609033*^9, 3.816667258914599*^9}},
  FontFamily->"Source Code Pro",
  FontSize->12,
- FontWeight->"SemiBold",ExpressionUUID->"d0c3848f-a082-4bf5-95e6-818c5f99c3d4"]
+ FontWeight->
+  "SemiBold",ExpressionUUID->"d0c3848f-a082-4bf5-95e6-818c5f99c3d4"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -915,14 +859,44 @@ Cell[BoxData[
    3.804043788299499*^9, 3.804043827288537*^9}, {3.804044791344001*^9, 
    3.804044841088084*^9}, 3.805005102811141*^9, {3.8050054701580267`*^9, 
    3.8050054858163157`*^9}},
- CellLabel->
-  "In[74]:=",ExpressionUUID->"9d9c1c5f-e099-4114-bbf6-aacdca2a90dd"]
+ CellLabel->"In[74]:=",ExpressionUUID->"9d9c1c5f-e099-4114-bbf6-aacdca2a90dd"]
 }, Open  ]]
 },
 WindowSize->{1920, 1035},
 WindowMargins->{{-289, Automatic}, {800, Automatic}},
 Magnification:>1.25 Inherited,
-FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (2019\:5e745\:67083\:65e5)",
-StyleDefinitions->"Default.nb"
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) \
+(2020\:5e746\:670822\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3fbdd30b-e4d5-4270-9f1e-f85c5e56d188"
 ]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 274, 6, 132, "Section",ExpressionUUID->"baab76a7-f6e1-4d33-b68e-abb58d24e228"],
+Cell[CellGroupData[{
+Cell[857, 30, 335, 5, 65, "Section",ExpressionUUID->"030a1874-706a-4761-b804-0503dc1b2560"],
+Cell[1195, 37, 3025, 72, 350, "Input",ExpressionUUID->"8f47ff15-3667-4d4b-9c17-4299714c289b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4257, 114, 1049, 17, 142, "Section",ExpressionUUID->"d24a5f42-df8d-43d8-82f1-c8395823f38c"],
+Cell[5309, 133, 35912, 686, 3124, "Input",ExpressionUUID->"d0c3848f-a082-4bf5-95e6-818c5f99c3d4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41258, 824, 238, 4, 84, "Section",ExpressionUUID->"157cf1e5-ec16-4eda-8d2c-e9cac67e3ac0"],
+Cell[41499, 830, 1260, 31, 80, "Input",ExpressionUUID->"9d9c1c5f-e099-4114-bbf6-aacdca2a90dd"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
 
