@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     43847,        892]
-NotebookOptionsPosition[     42775,        864]
-NotebookOutlinePosition[     43218,        882]
-CellTagsIndexPosition[     43175,        879]
+NotebookDataLength[     46006,        937]
+NotebookOptionsPosition[     44934,        909]
+NotebookOutlinePosition[     45377,        927]
+CellTagsIndexPosition[     45334,        924]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -142,6 +142,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"isTrial", " ", "=", " ", "True"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{"isComplementary", "=", "False"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"nBeads", "=", 
    RowBox[{"If", "[", 
     RowBox[{"isTrial", ",", " ", "5", ",", "1000"}], "]"}]}], 
@@ -154,8 +156,12 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"prefix", "=", 
    RowBox[{"If", "[", 
-    RowBox[{"isTrial", ",", "\"\<small_\>\"", ",", "\"\<\>\""}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+    RowBox[{"isTrial", ",", "\"\<small_\>\"", ",", "\"\<large_\>\""}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lastIndex", "=", 
+   RowBox[{"Ceiling", "[", 
+    RowBox[{"n", "/", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"dropProbability", "=", "0.01"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -483,6 +489,37 @@ Cell[BoxData[{
               RowBox[{"A", ",", 
                RowBox[{"1.0", "/", "n"}]}], "]"}]}], ";", 
             "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{"isComplementary", ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"adjMat", "[", 
+                 RowBox[{"[", 
+                  RowBox[{
+                   RowBox[{"1", ";;", "lastIndex"}], ",", 
+                   RowBox[{
+                    RowBox[{"lastIndex", "+", "1"}], ";;", "nBeads"}]}], 
+                  "]"}], "]"}], "=", " ", 
+                RowBox[{"ConstantArray", "[", 
+                 RowBox[{"0", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"lastIndex", ",", 
+                    RowBox[{"nBeads", "-", "lastIndex"}]}], "}"}]}], "]"}]}], 
+               ";", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"adjMat", "[", 
+                 RowBox[{"[", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"lastIndex", "+", "1"}], ";;", "nBeads"}], ",", 
+                   RowBox[{"1", ";;", "lastIndex"}]}], "]"}], "]"}], "=", " ", 
+                RowBox[{"ConstantArray", "[", 
+                 RowBox[{"0", ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"nBeads", "-", "lastIndex"}], ",", "lastIndex"}], 
+                   "}"}]}], "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+            ";", "\[IndentingNewLine]", 
             RowBox[{"adjExportDirectory", "=", 
              RowBox[{"FileNameJoin", "[", 
               RowBox[{"{", 
@@ -813,7 +850,15 @@ Cell[BoxData[{
    3.809822847075181*^9, 3.809822920026043*^9}, {3.8098229599406147`*^9, 
    3.8098230316951323`*^9}, {3.809823191362863*^9, 3.809823192523108*^9}, {
    3.8098232241297092`*^9, 3.809823233860927*^9}, {3.80982330734168*^9, 
-   3.809823313270455*^9}, {3.816667252609033*^9, 3.816667258914599*^9}},
+   3.809823313270455*^9}, {3.816667252609033*^9, 3.816667258914599*^9}, {
+   3.816667311226653*^9, 3.816667329966329*^9}, {3.816668283963337*^9, 
+   3.8166683528717613`*^9}, {3.816668498938573*^9, 3.816668503099856*^9}, {
+   3.816668536554377*^9, 3.816668585724022*^9}, {3.816668630240198*^9, 
+   3.816668632244461*^9}, {3.816668702133214*^9, 3.816668743370194*^9}, {
+   3.8166689757040253`*^9, 3.816668986096056*^9}, {3.8166690240401783`*^9, 
+   3.816669032342507*^9}, {3.816669064546132*^9, 3.816669073677731*^9}, {
+   3.8166692631979647`*^9, 3.8166694384165497`*^9}, {3.817089690233292*^9, 
+   3.817089692760304*^9}},
  FontFamily->"Source Code Pro",
  FontSize->12,
  FontWeight->
@@ -888,15 +933,13 @@ Cell[1195, 37, 3025, 72, 350, "Input",ExpressionUUID->"8f47ff15-3667-4d4b-9c17-4
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[4257, 114, 1049, 17, 142, "Section",ExpressionUUID->"d24a5f42-df8d-43d8-82f1-c8395823f38c"],
-Cell[5309, 133, 35912, 686, 3124, "Input",ExpressionUUID->"d0c3848f-a082-4bf5-95e6-818c5f99c3d4"]
+Cell[5309, 133, 38071, 731, 3358, "Input",ExpressionUUID->"d0c3848f-a082-4bf5-95e6-818c5f99c3d4"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[41258, 824, 238, 4, 84, "Section",ExpressionUUID->"157cf1e5-ec16-4eda-8d2c-e9cac67e3ac0"],
-Cell[41499, 830, 1260, 31, 80, "Input",ExpressionUUID->"9d9c1c5f-e099-4114-bbf6-aacdca2a90dd"]
+Cell[43417, 869, 238, 4, 84, "Section",ExpressionUUID->"157cf1e5-ec16-4eda-8d2c-e9cac67e3ac0"],
+Cell[43658, 875, 1260, 31, 80, "Input",ExpressionUUID->"9d9c1c5f-e099-4114-bbf6-aacdca2a90dd"]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
